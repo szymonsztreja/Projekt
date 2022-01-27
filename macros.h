@@ -17,5 +17,6 @@ public:
 
 };
 
+auto CalorieIntake(double Weight, Macros& Produkt) -> double;
 
 #endif // MACROS_H

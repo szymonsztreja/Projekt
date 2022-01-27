@@ -1,8 +1,8 @@
 #include "calorieaddwindow.h"
 #include "ui_calorieaddwindow.h"
-#include <macros.cpp>
+//#include <macros.cpp>
 #include <QMessageBox>
-
+#include "macros.h"
 CalorieAddWindow::CalorieAddWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CalorieAddWindow)
