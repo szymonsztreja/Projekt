@@ -14,7 +14,11 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(67, 67, 67);</string>
+   <string notr="true">background-color: rgb(33, 33, 33);
+color: rgb(255, 204, 0);
+border-color: rgb(0, 0, 0);
+selection-color: rgb(245, 245, 245);
+selection-background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -29,13 +33,7 @@
     <bool>true</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(143, 223, 177); 
-border: none;
-color:rgb(43, 43, 43);
-border-radius: 10px;
-}
-</string>
+    <string notr="true"/>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
@@ -106,13 +104,7 @@ border-radius: 10px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(143, 223, 177); 
-border: none;
-color:rgb(43, 43, 43);
-border-radius: 10px;
-}
-</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>Calculate</string>

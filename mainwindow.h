@@ -3,19 +3,37 @@
 
 #include <QMainWindow>
 #include <QDesktopWidget>
+#include <QtCharts/QPieSeries>
+#include <QtCharts/QPieSlice>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QHorizontalStackedBarSeries>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QCategoryAxis>
 namespace Ui {
 class MainWindow;
 }
 
+QT_CHARTS_USE_NAMESPACE
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+    QPieSeries *series;
+    QChart *chart;
+    QChartView *chartView ;
 
 public:
     explicit MainWindow(QWidget *parent = 0);   //declare a constr, widget has
     ~MainWindow();                              // no parent, dsctr
 
 private slots:
+
+    void PrintTotals();
 
     void Switch_function(int index, double w);
 

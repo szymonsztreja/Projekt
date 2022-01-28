@@ -4,19 +4,9 @@
 #include "bmi_window.h"
 #include <calorieaddwindow.h>
 #include <macros.cpp>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
-#include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QHorizontalStackedBarSeries>
-#include <QtCharts/QLineSeries>
-#include <QtCharts/QCategoryAxis>
+
 #include <QList>
 
-QT_CHARTS_USE_NAMESPACE
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -25,28 +15,49 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    Draw_Graph();
-    QPieSeries *series = new QPieSeries();
+    series = new QPieSeries();
     series->append("Protein", macros_summary.Protein);
     series->append("Fats", macros_summary.Fats);
     series->append("Carbs", macros_summary.Carbs);
 
-    QPieSlice *slice0 = series->slices().at(0);
-    slice0->setLabelVisible();
-    QPieSlice *slice1 = series->slices().at(1);
-    slice1->setLabelVisible();
-    QPieSlice *slice2 = series->slices().at(2);
-    slice2->setLabelVisible();
+    QFont lablesFont;
+    lablesFont.setPixelSize(13);
+//    lablesFont.bold();
 
-    QChart *chart = new QChart();
+    QPieSlice *slice0 = series->slices().at(0);
+    slice0->setExploded();
+    slice0->setLabelColor(QColor("#ffcc00"));
+    slice0->setLabelFont(lablesFont);
+    slice0->setLabelVisible();
+    slice0->setPen(QPen(Qt::black, 1));
+    slice0->setColor(QColor("#4dc3ff"));
+    QPieSlice *slice1 = series->slices().at(1);
+    slice1->setLabelColor(QColor("#ffcc00"));
+//    slice1->setLabelFont(QFont("ubuntu bold"));
+    slice1->setLabelFont(lablesFont);
+    slice1->setLabelVisible();
+    slice1->setPen(QPen(Qt::black, 1));
+    slice1->setColor(QColor("#ffdb4d"));
+    QPieSlice *slice2 = series->slices().at(2);
+    slice2->setLabelColor(QColor("#ffcc00"));
+//    slice2->setLabelFont(QFont("ubuntu bold"));
+    slice2->setLabelFont(lablesFont);
+    slice2->setLabelVisible();
+    slice2->setPen(QPen(Qt::black, 1));
+    slice2->setColor(QColor("#ff9933"));
+
+    chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Macronutrients");
+    chart->setTitleBrush(QBrush(QColor("#ffcc00")));
     chart->legend()->hide();
+    chart->setBackgroundBrush(QBrush(QColor("transparent")));
 
-    QChartView *chartView = new QChartView(chart);
+    chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
+
     chartView->setParent(ui->frame);
-    chartView->setFixedSize(ui->frame->size() );
+    chartView->setMinimumSize(ui->frame->size() );
 
     QStringList food = { "Chicken", "Egg", "Rice", "Tomato",
                          "Paprika" , "Potato", "Pasta",
@@ -68,9 +79,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->spinBox_5->setSingleStep(5);
     ui->spinBox_5->setRange(0,1000);
 
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
-
-
+    ui->label_protein->setText(QString::number(macros_summary.Protein));
+    ui->label_carbs->setText(QString::number(macros_summary.Carbs));
+    ui->label_fats->setText(QString::number(macros_summary.Fats));
 }
 
 MainWindow::~MainWindow()
@@ -87,80 +98,82 @@ void MainWindow::on_actionBMI_Calculator_triggered()
 
 void MainWindow::on_pushButton_clicked()
 {
-//    CalorieAddWindow CAW;
-//    CAW.setModal(true);
-//    CAW.exec();
     auto weight = ui->spinBox->value();
     Switch_function( ui->comboBox->currentIndex(), weight);
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
-
+    PrintTotals();
+    Draw_Graph();
 }
 
 
 void MainWindow::on_pushButton_2_clicked()
 {
-//    CalorieAddWindow CAW;
-//    CAW.setModal(true);
-//    CAW.exec();
     auto weight = ui->spinBox_2->value();
-    Switch_function( ui->comboBox_2->currentIndex(), weight);
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
+    Switch_function( ui->comboBox_2->currentIndex(), weight);;
+    PrintTotals();
+    Draw_Graph();
 }
 
 void MainWindow::on_pushButton_3_clicked()
 {
-//    CalorieAddWindow CAW;
-//    CAW.setModal(true);
-//    CAW.exec();
     auto weight = ui->spinBox_3->value();
     Switch_function( ui->comboBox_3->currentIndex(), weight);
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
+    PrintTotals();
+    Draw_Graph();
 }
 
 void MainWindow::on_pushButton_4_clicked()
 {
-//    CalorieAddWindow CAW;
-//    CAW.setModal(true);
-//    CAW.exec();
     auto weight = ui->spinBox_4->value();
     Switch_function( ui->comboBox_4->currentIndex(), weight);
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
+    PrintTotals();
+    Draw_Graph();
 }
 
 void MainWindow::on_pushButton_5_clicked()
 {
-//    CalorieAddWindow CAW;
-//    CAW.setModal(true);
-//    CAW.exec();
     auto weight = ui->spinBox_5->value();
     Switch_function( ui->comboBox_5->currentIndex(), weight);
-    ui->lineEdit->setText(QString::number(macros_summary.CaloriesTotal));
+    PrintTotals();
+    Draw_Graph();
 }
 
 
 void MainWindow::Draw_Graph()
 {
-//    QPieSeries *series = new QPieSeries();
-//    series->append("Protein", macros_summary.Protein);
-//    series->append("Fats", macros_summary.Fats);
-//    series->append("Carbs", macros_summary.Carbs);
+    chart->removeSeries(series);
 
-//    QPieSlice *slice0 = series->slices().at(0);
-//    slice0->setLabelVisible();
-//    QPieSlice *slice1 = series->slices().at(1);
-//    slice1->setLabelVisible();
-//    QPieSlice *slice2 = series->slices().at(2);
-//    slice2->setLabelVisible();
+    series = new QPieSeries();
+    series->append("Protein", macros_summary.Protein);
+    series->append("Fats", macros_summary.Fats);
+    series->append("Carbs", macros_summary.Carbs);
 
-//    QChart *chart = new QChart();
-//    chart->addSeries(series);
-//    chart->setTitle("Dupa");
-//    chart->legend()->hide();
+    chart->addSeries(series);
 
-//    QChartView *chartView = new QChartView(chart);
-//    chartView->setRenderHint(QPainter::Antialiasing);
-//    chartView->setParent(ui->frame);
-//    chartView->setFixedSize(ui->frame->size() );
+    QFont lablesFont;
+    lablesFont.setPixelSize(13);
+    lablesFont.bold();
+
+    QPieSlice *slice0 = series->slices().at(0);
+    slice0->setExploded();
+    slice0->setLabelColor(QColor("#ffcc00"));
+    slice0->setLabelFont(lablesFont);
+    slice0->setLabelVisible();
+    slice0->setPen(QPen(Qt::black, 1));
+    slice0->setColor(QColor("#4dc3ff"));
+    QPieSlice *slice1 = series->slices().at(1);
+    slice1->setLabelColor(QColor("#ffcc00"));
+//    slice1->setLabelFont(QFont("ubuntu bold"));
+    slice1->setLabelFont(lablesFont);
+    slice1->setLabelVisible();
+    slice1->setPen(QPen(Qt::black, 1));
+    slice1->setColor(QColor("#ffdb4d"));
+    QPieSlice *slice2 = series->slices().at(2);
+    slice2->setLabelColor(QColor("#ffcc00"));
+//    slice2->setLabelFont(QFont("ubuntu bold"));
+    slice2->setLabelFont(lablesFont);
+    slice2->setLabelVisible();
+    slice2->setPen(QPen(Qt::black, 1));
+    slice2->setColor(QColor("#ff9933"));
 }
 
 void MainWindow::Switch_function(int index, double w)
@@ -214,4 +227,12 @@ void MainWindow::Switch_function(int index, double w)
         macros_summary.CalorieIntake(w, Beef);
         break;
     }
+}
+
+void MainWindow::PrintTotals()
+{
+    ui->label_protein->setText(QString::number(macros_summary.Protein));
+    ui->label_carbs->setText(QString::number(macros_summary.Carbs));
+    ui->label_fats->setText(QString::number(macros_summary.Fats));
+    ui->label_total->setText(QString::number(macros_summary.CaloriesTotal));
 }

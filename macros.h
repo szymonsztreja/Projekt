@@ -15,16 +15,9 @@ public:
         Fats = F;
     };
 
-    auto CalorieIntake(double Weight, Macros& Produkt) -> double;
+    auto CalorieIntake(double Weight, Macros& Produkt) -> void;
 
 };
-
-//auto CalorieIntake(double Weight, Macros& Produkt) -> double;
-
-//class macros_summary : public Macros{
-//public:
-//        double calories_total;
-//}
 
 
 #endif // MACROS_H

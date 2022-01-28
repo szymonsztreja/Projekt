@@ -74,19 +74,13 @@ border-radius: 10px;
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton{
-background-color: rgb(143, 223, 177); 
-border: none;
-color:rgb(43, 43, 43);
-border-radius: 10px;
-}
-</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string>PushButton</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>33</x>
@@ -122,12 +116,7 @@ border-radius: 10px;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QComboBox{
-background-color: rgb(143, 223, 177); 
-border: none;
-color:rgb(130, 130, 129);
-border-radius: 10px;
-}
+         <string notr="true">
 </string>
         </property>
        </widget>
@@ -160,12 +149,7 @@ border-radius: 10px;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QDoubleSpinBox{
-background-color: rgb(143, 223, 177); 
-border: none;
-color:rgb(43, 43, 43);
-border-radius: 10px;
-}
+         <string notr="true">
 </string>
         </property>
        </widget>
