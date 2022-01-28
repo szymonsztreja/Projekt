@@ -5,7 +5,7 @@
 class Macros
 {
 public:
-    std::vector<Macros> Products;
+    double CaloriesTotal;
     double Protein;
     double Carbs;
     double Fats;    
@@ -15,8 +15,16 @@ public:
         Fats = F;
     };
 
+    auto CalorieIntake(double Weight, Macros& Produkt) -> double;
+
 };
 
-auto CalorieIntake(double Weight, Macros& Produkt) -> double;
+//auto CalorieIntake(double Weight, Macros& Produkt) -> double;
+
+//class macros_summary : public Macros{
+//public:
+//        double calories_total;
+//}
+
 
 #endif // MACROS_H

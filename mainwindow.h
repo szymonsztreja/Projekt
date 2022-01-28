@@ -17,6 +17,10 @@ public:
 
 private slots:
 
+    void Switch_function(int index, double w);
+
+    void Draw_Graph();
+
     void on_actionBMI_Calculator_triggered();
 
     void on_pushButton_clicked();
@@ -28,6 +32,8 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::MainWindow *ui;                         // handles window

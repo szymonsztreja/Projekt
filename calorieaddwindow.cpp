@@ -26,6 +26,7 @@ CalorieAddWindow::CalorieAddWindow(QWidget *parent) :
     ui->comboBox->addItem("Milk") ;
     ui->comboBox->addItem("Beef") ;
 
+
 }
 
 CalorieAddWindow::~CalorieAddWindow()
@@ -35,56 +36,58 @@ CalorieAddWindow::~CalorieAddWindow()
 
 void CalorieAddWindow::on_pushButton_clicked()
 {
-    auto Chicken = Macros(31, 0, 3.6);
-    auto Egg = Macros(13, 0.7, 9.5);
-    auto Rice = Macros(6, 79, 1);
-    auto Tomato = Macros(0.9, 3.9, 0.2);
-    auto Paprika = Macros(0, 6, 1);
-    auto Beef =  Macros(18, 0, 18);
-    auto Potato = Macros(2, 18, 0);
-    auto Pasta = Macros(15, 58, 3);
-    auto Bread = Macros(6, 51, 2);
-    auto Oatmeal = Macros( 17, 66, 7);
-    auto Milk = Macros(3, 5, 3.2);
-    double a;
-    auto Weigh = ui->doubleSpinBox->value();
+//    auto Chicken = Macros(21, 0, 3.6);
+//    auto Egg = Macros(13, 0.7, 9.5);
+//    auto Rice = Macros(6, 79, 1);
+//    auto Tomato = Macros(0.9, 3.9, 0.2);
+//    auto Paprika = Macros(0, 6, 1);
+//    auto Beef =  Macros(18, 0, 18);
+//    auto Potato = Macros(2, 18, 0);
+//    auto Pasta = Macros(15, 58, 3);
+//    auto Bread = Macros(6, 51, 2);
+//    auto Oatmeal = Macros( 17, 66, 7);
+//    auto Milk = Macros(3, 5, 3.2);
+//    double a;
+//    auto Weigh = ui->doubleSpinBox->value();
 
-    switch( ui->comboBox->currentIndex() )
-    {
-    case 0 :
-        a = CalorieIntake(Weigh, Chicken);
-        break;
-    case 1 :
-        a = CalorieIntake(Weigh, Egg);
-        break;
-    case 2 :
-        a = CalorieIntake(Weigh, Rice);
-        break;
-    case 3 :
-        a = CalorieIntake(Weigh, Tomato);
-        break;
-    case 4 :
-        a = CalorieIntake(Weigh, Paprika);
-        break;
-    case 5 :
-        a = CalorieIntake(Weigh, Potato);
-        break;
-    case 6 :
-        a = CalorieIntake(Weigh, Pasta);
-        break;
-    case 7 :
-        a = CalorieIntake(Weigh, Bread);
-        break;
-    case 8 :
-        a = CalorieIntake(Weigh, Oatmeal);
-        break;
-    case 9 :
-        a = CalorieIntake(Weigh, Milk);
-        break;
-    case 10 :
-        a = CalorieIntake(Weigh, Beef);
-        break;
-    }
+//    switch( ui->comboBox->currentIndex() )
+//    {
+//    case 0 :
+//        a = CalorieIntake(Weigh, Chicken);
+//        break;
+//    case 1 :
+//        a = CalorieIntake(Weigh, Egg);
+//        break;
+//    case 2 :
+//        a = CalorieIntake(Weigh, Rice);
+//        break;
+//    case 3 :
+//        a = CalorieIntake(Weigh, Tomato);
+//        break;
+//    case 4 :
+//        a = CalorieIntake(Weigh, Paprika);
+//        break;
+//    case 5 :
+//        a = CalorieIntake(Weigh, Potato);
+//        break;
+//    case 6 :
+//        a = CalorieIntake(Weigh, Pasta);
+//        break;
+//    case 7 :
+//        a = CalorieIntake(Weigh, Bread);
+//        break;
+//    case 8 :
+//        a = CalorieIntake(Weigh, Oatmeal);
+//        break;
+//    case 9 :
+//        a = CalorieIntake(Weigh, Milk);
+//        break;
+//    case 10 :
+//        a = CalorieIntake(Weigh, Beef);
+//        break;
+//    }
 
-    QMessageBox::information(this, "title", QString::number(a) );
+
+
+//    QMessageBox::information(this, "title", QString::number(a) );
 }

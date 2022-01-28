@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>541</width>
-    <height>490</height>
+    <width>792</width>
+    <height>633</height>
    </rect>
   </property>
   <property name="font">
@@ -29,10 +29,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>19</y>
-      <width>311</width>
-      <height>411</height>
+      <x>340</x>
+      <y>20</y>
+      <width>441</width>
+      <height>541</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -42,16 +42,29 @@
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>211</width>
-      <height>431</height>
+      <x>52</x>
+      <y>525</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 170, 0);</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>13</y>
+      <width>341</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
@@ -87,6 +100,12 @@
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="comboBox"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox"/>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButton">
          <property name="maximumSize">
           <size>
@@ -118,7 +137,7 @@ border-radius: 10px;
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="label_2">
          <property name="sizePolicy">
@@ -152,6 +171,12 @@ border-radius: 10px;
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="comboBox_2"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_2"/>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButton_2">
          <property name="maximumSize">
           <size>
@@ -182,7 +207,7 @@ border-radius: 10px;
       </layout>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label_3">
          <property name="sizePolicy">
@@ -214,6 +239,12 @@ border-radius: 10px;
           <string>Obiad</string>
          </property>
         </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_3"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_3"/>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
@@ -280,6 +311,12 @@ border-radius: 10px;
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="comboBox_4"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_4"/>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButton_4">
          <property name="maximumSize">
           <size>
@@ -344,6 +381,12 @@ border-radius: 10px;
         </widget>
        </item>
        <item>
+        <widget class="QComboBox" name="comboBox_5"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox_5"/>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButton_5">
          <property name="maximumSize">
           <size>
@@ -375,13 +418,26 @@ border-radius: 10px;
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton_6">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>540</y>
+      <width>86</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>541</width>
+     <width>792</width>
      <height>26</height>
     </rect>
    </property>
